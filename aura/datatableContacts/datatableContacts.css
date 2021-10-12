@@ -1,0 +1,16 @@
+.THIS {
+    
+}
+.THIS.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+.THIS .input{
+    width: 250px;    
+}
+.THIS .button{
+    margin-top: 8px;
+}
