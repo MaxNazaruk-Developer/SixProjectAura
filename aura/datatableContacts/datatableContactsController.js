@@ -10,8 +10,25 @@
             "searchKey": searchKey
         });
         action.setCallback(this, function(responseSearch) {
-            component.set("v.contactList", responseSearch.getReturnValue());
-        });
+            let state = responseSearch.getState();
+            if (state === "SUCCESS") {                
+                let dataContacts = responseSearch.getReturnValue();
+                let datatable = [];
+                dataContacts.forEach( row => { 
+                    let rowData = {};
+                    rowData.LastName = row.LastName;
+                    rowData.FirstName = row.FirstName;
+                    rowData.Email = row.Email;
+                    if(row.AccountId) {
+                    rowData.LinkAcc =  '/' + row.AccountId;
+                    rowData.AccountName = row.Account.Name;
+                    }
+                    rowData.MobilePhone = row.MobilePhone;
+                    rowData.CreatedDate = row.CreatedDate;
+                    datatable.push(rowData);
+                });
+            component.set("v.contactList", datatable);
+        }});
         $A.enqueueAction(action);
     }
 })
