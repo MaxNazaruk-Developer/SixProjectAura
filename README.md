@@ -1,18 +1,17 @@
-# Salesforce DX Project: Next Steps
+## Условие задания
+1.Создать таблицу контактов, используя стандартный объект CONTACTS со следующими столбцами: FIRST NAME, LAST NAME, EMAIL, ACCOUNT, MOBILE PHONE, CREATED DATE    
+1.1	Заголовки таблицы должны находиться в parent component, а данные таблицы в child component;    
+1.2 CREATED DATE в формате 6/23/2017, 08:05 PM;    
+2.	Сверху от таблицы создать форму поиска SEARCH BY NAME с полем ввода и кнопкой FILTER;    
+2.1.	необходимо реализовать фильтр контактов по имени контакта;    
+3.	При нажатии на имя аккаунта в таблице, данные аккаунта должны редиректиться на детайл педж данного аккаунта;
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Выполнение задания
+  При загрузке компонента мы видим таблицу контактов со следующими столбцами: FIRST NAME, LAST NAME, EMAIL, ACCOUNT, MOBILE PHONE, CREATED DATE, которые заполнены для каждого контакта индивидуально в зависимости от значения его полей соответственно.
+![Screenshot_1](https://user-images.githubusercontent.com/84872903/136927421-8abc11c6-7135-42bb-81eb-abd22cea24d3.png)
+Колонка Account является ссылкой на соответствующий аккаунт данного контакта. По нажатию на имя ее мы переходим страницу данного аккаунта.
+![Screenshot_2](https://user-images.githubusercontent.com/84872903/136928330-f23b84be-758b-4ba0-bfb9-59b0d91cafcb.png)
+По нажатию на имя аккаунта мы переходим страницу данного аккаунта.
+![Screenshot_3](https://user-images.githubusercontent.com/84872903/136928405-3ef2b830-fb83-4297-8aad-47b8cd41f9c4.png)
+Так же в компоненте есть поле ввода и кнопка. При вводе имени контакта и нажатии на кнопку поиска осуществляется поиск по колонке FIRST NAME и нужный контакт появляется в таблице. ![Screenshot_4](https://user-images.githubusercontent.com/84872903/136929068-4cedad11-3549-440e-b17d-9ef4463f2a59.png)
+Если в таблице нет совпадений она будет пустой.
